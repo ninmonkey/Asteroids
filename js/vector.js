@@ -3,6 +3,6 @@ function Vector(x, y) {
     this.y = y;
 }
 
-Vector.prototype.log = function() {
-    console.log(`Vector( ${this.x}, ${this.y} )` );
+Vector.prototype.str = function() {
+    return `Vector( ${this.x}, ${this.y} )`;
 }

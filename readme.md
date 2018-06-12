@@ -11,9 +11,10 @@ Asteroids clone without libraries, uses ES6 features. I  purposely don't use `cl
 - use more canvases for performance such as ship/rock/bg.
 - Vector2d
 - auto-pause when changing focus on tab or windows?
+- replace ship.log() with json.dump(ship) ?
 
 # todo: specifics
-- modules / namespaces
+- ES6 imports
 - vector
     - dot product
     - normalize()

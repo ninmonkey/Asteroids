@@ -23,10 +23,8 @@ function init() {
 
     let x = randomInt(0, canvas.width);
     let y = randomInt(0, canvas.height);
-    let v = new Vector(x, y);
-    v.log();
-
-    ship = new Ship(100, 100);
+    ship = new Ship(x, y);
+    ship.log();
 
     asteroids = [];
     // for( let i = 0; i < 5; i++ ) {
@@ -35,15 +33,13 @@ function init() {
 
 function loop() {
     let time = performance.now() / 1000;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
     stats.begin();
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     ship.draw();
     drawScore();
 
     stats.end();
-
     requestAnimationFrame(loop);
 }
 
