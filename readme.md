@@ -13,6 +13,7 @@ Asteroids clone without libraries, uses ES6 features. I  purposely don't use `cl
 - auto-pause when changing focus on tab or windows?
 
 # todo: specifics
+- modules / namespaces
 - vector
     - dot product
     - normalize()

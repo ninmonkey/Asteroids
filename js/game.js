@@ -1,33 +1,9 @@
-console.log("done");
-
 let canvas = null;
 let ctx = null;
 let visualDebug = true;
 let stats = new Stats();
 let asteroids = [];
-
-function Vector(x, y) {
-    this.x = x;
-    this.y = y;
-}
-
-Vector.prototype.log = function() {
-    console.log(`Vector( ${this.x}, ${this.y} )` );
-}
-
-function randomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
-}
-
-function drawShip() {
-    ctx.beginPath();
-    ctx.rect(100, 100, 100, 100);
-    ctx.fillStyle = "#ddd";
-    ctx.fill();
-    ctx.closePath();
-}
+let ship = null;
 
 function drawScore() {
     ctx.font = "16px arial";
@@ -50,6 +26,8 @@ function init() {
     let v = new Vector(x, y);
     v.log();
 
+    ship = new Ship(100, 100);
+
     asteroids = [];
     // for( let i = 0; i < 5; i++ ) {
     // }
@@ -61,7 +39,7 @@ function loop() {
 
     stats.begin();
 
-    drawShip();
+    ship.draw();
     drawScore();
 
     stats.end();
