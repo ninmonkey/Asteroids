@@ -4,6 +4,22 @@ let canvas = null;
 let ctx = null;
 let visualDebug = true;
 let stats = new Stats();
+let asteroids = [];
+
+function Vector(x, y) {
+    this.x = x;
+    this.y = y;
+}
+
+Vector.prototype.log = function() {
+    console.log(`Vector( ${this.x}, ${this.y} )` );
+}
+
+function randomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+}
 
 function drawShip() {
     ctx.beginPath();
@@ -28,6 +44,15 @@ function init() {
         document.body.appendChild(stats.dom);
         stats.showPanel(1);
     }
+
+    let x = randomInt(0, canvas.width);
+    let y = randomInt(0, canvas.height);
+    let v = new Vector(x, y);
+    v.log();
+
+    asteroids = [];
+    // for( let i = 0; i < 5; i++ ) {
+    // }
 }
 
 function loop() {
