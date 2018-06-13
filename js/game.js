@@ -2,8 +2,8 @@ let canvas = null;
 let ctx = null;
 let visualDebug = true;
 let stats = new Stats();
-let asteroids = [];
 let ship = null;
+let asteroids = [];
 
 function drawScore() {
     ctx.font = "16px arial";
@@ -16,19 +16,19 @@ function drawScore() {
 function init() {
     canvas = document.getElementById("canvas");
     ctx = canvas.getContext("2d");
+    asteroids = [];
+
     if(visualDebug) {
         document.body.appendChild(stats.dom);
         stats.showPanel(1);
     }
 
-    let x = randomInt(0, canvas.width);
-    let y = randomInt(0, canvas.height);
-    ship = new Ship(x, y);
+    ship = new Ship();
     ship.log();
 
-    asteroids = [];
-    // for( let i = 0; i < 5; i++ ) {
-    // }
+    for( let i = 0; i < 5; i++ ) {
+        asteroids.push(new Asteroid());
+    }
 }
 
 function loop() {
@@ -36,6 +36,9 @@ function loop() {
     stats.begin();
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+    asteroids.forEach(function(asteroid){
+        asteroid.draw();
+    })
     ship.draw();
     drawScore();
 

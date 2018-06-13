@@ -4,7 +4,7 @@ Asteroids clone without libraries, uses ES6 features. I  purposely don't use `cl
 
 # future
 
-- ship and rocks with coordinates
+- Ship/Asteroid mixin entitiy class
 - then ship class using Vector
 - refactor globals
 - profile speed, only update dirty rects
@@ -14,7 +14,8 @@ Asteroids clone without libraries, uses ES6 features. I  purposely don't use `cl
 - replace ship.log() with json.dump(ship) ?
 
 # todo: specifics
-- ES6 imports
+- ES6 imports, or
+    - module pattern if browsers don't support modules 
 - vector
     - dot product
     - normalize()
