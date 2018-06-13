@@ -8,9 +8,9 @@ function Ship(x, y) {
 }
 
 Ship.prototype.log = function() {
-    let loc = this.loc.str();
-    let vel = this.vel.str();
-    console.log(`Ship( loc=${loc} vel=${vel} )`)
+    let loc = this.loc.toString();
+    let vel = this.vel.toString();
+    console.log(`Ship( loc=${loc}, vel=${vel} )`)
 }
 
 Ship.prototype.draw = function() {

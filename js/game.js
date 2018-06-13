@@ -29,6 +29,7 @@ function init() {
     for( let i = 0; i < 5; i++ ) {
         asteroids.push(new Asteroid());
     }
+    asteroids[0].log();
 }
 
 function loop() {

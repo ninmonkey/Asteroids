@@ -20,3 +20,7 @@ Asteroids clone without libraries, uses ES6 features. I  purposely don't use `cl
     - dot product
     - normalize()
     - scale len to X
+
+# see also:
+
+http://victorjs.org/#normalize
